@@ -113,3 +113,4 @@ public enum MagicSpell {
         this.damage = damage;
     }
 }
+

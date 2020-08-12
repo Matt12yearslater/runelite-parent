@@ -575,8 +575,12 @@ public class MaxHitPlugin extends Plugin {
             return Math.floor(maxHitBase()) + 5;
         }
         if (specialAttackDamageMultiplier(weaponName()) != 1) {
+            if (weaponName().contains("dagger") || weaponName().equalsIgnoreCase("Dark bow")) {
+                return Math.floor(Math.floor(maxHitBase()) * specialAttackDamageMultiplier(weaponName())) * 2;
+            }
             return Math.floor(maxHitBase()) * specialAttackDamageMultiplier(weaponName());
         }
+
 
         return -1;
     }
