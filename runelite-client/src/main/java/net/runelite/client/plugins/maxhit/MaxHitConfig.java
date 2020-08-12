@@ -22,7 +22,6 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-
 package net.runelite.client.plugins.maxhit;
 
 import net.runelite.client.config.Config;
@@ -58,7 +57,7 @@ public interface MaxHitConfig extends Config {
 
     @ConfigItem(
             keyName = "spellChoice",
-            name = "Choose Spell",
+            name = "Spell",
             description = "Choose spell to calculate max",
             position = 4
     )

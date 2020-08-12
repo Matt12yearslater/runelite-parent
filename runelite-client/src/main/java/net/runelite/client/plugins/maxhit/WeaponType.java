@@ -92,4 +92,5 @@ enum WeaponType
 	{
 		return weaponTypes.get(id);
 	}
+
 }

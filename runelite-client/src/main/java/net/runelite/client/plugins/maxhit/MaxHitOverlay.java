@@ -27,6 +27,7 @@ package net.runelite.client.plugins.maxhit;
 
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
+import net.runelite.client.ui.overlay.OverlayMenuEntry;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.ui.overlay.components.PanelComponent;
@@ -34,22 +35,25 @@ import net.runelite.client.ui.overlay.components.PanelComponent;
 import javax.inject.Inject;
 import java.awt.*;
 
+import static net.runelite.api.MenuAction.RUNELITE_OVERLAY_CONFIG;
+import static net.runelite.client.ui.overlay.OverlayManager.OPTION_CONFIGURE;
+
 public class MaxHitOverlay extends Overlay {
 
-    private MaxHitPlugin plugin; //add field for access to main plugin class object
-    private MaxHitConfig config; //add field for access to config
+    private MaxHitPlugin plugin;
+    private MaxHitConfig config;
 
     private PanelComponent panelComponent = new PanelComponent();
 
-    //constructor for the myoverlay class
 
     @Inject
     public MaxHitOverlay(MaxHitPlugin plugin, MaxHitConfig config) {
         super(plugin);
-        setPosition(OverlayPosition.TOP_LEFT);
+        setPosition(OverlayPosition.ABOVE_CHATBOX_RIGHT);
         setLayer(OverlayLayer.ABOVE_SCENE);
         this.plugin = plugin;  //set plugin field to plugin object given as input
         this.config = config;
+        getMenuEntries().add(new OverlayMenuEntry(RUNELITE_OVERLAY_CONFIG, OPTION_CONFIGURE, "Max hit overlay"));
     }
 
     //render method
